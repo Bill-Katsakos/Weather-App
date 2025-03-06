@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta information for proper rendering and responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title of the webpage -->
+    <title>Weather App</title>
+
+    <!-- Bootstrap CSS for styling -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS file for additional styles -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Main container for the weather app -->
+      <div class="row d-flex justify-content-center py-5">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="mainContainer card text-body" style="border-radius: 35px">
+            <div class="card-body p-4">
+
+              <!-- Search input field with button -->
+              <div class="input-group rounded mb-3">
+                <input
+                  type="search"
+                  class="transpBackground form-control rounded"
+                  id="input-city"
+                  placeholder="City"
+                  aria-label="Search"
+                  aria-describedby="search-button"
+                />
+                <a href="#!" type="button" class="searchButton">
+                  <span
+                    class="transpBackground input-group-text border-0 fw-bold"
+                    id="search-button"
+                  >
+                    Search
+                  </span>
+                </a>
+              </div>
+
+              <!-- Display for city, date, and current time -->
+              <div class="d-flex">
+                <h6 class="flex-grow-1" id="result"></h6>
+                <h6 class="me-3" id="date"></h6>
+                <h6 id="timeNow"></h6>
+              </div>
+
+              <!-- Temperature unit selection (hidden by default) -->
+              <div class="startOff mb-0 pb-0" style="display: none;">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="radioButton transpBackground form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio1"
+                    value="option1"
+                    checked
+                  />
+                  <label
+                    class="form-check-label"
+                    id="Celsius"
+                    for="inlineRadio1"
+                  >
+                    Celsius
+                  </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="radioButton transpBackground form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio2"
+                    value="option2"
+                  />
+                  <label
+                    class="form-check-label"
+                    id="Farenheit"
+                    for="inlineRadio2"
+                  >
+                    Fahrenheit
+                  </label>
+                </div>
+              </div>
+
+              <!-- Spinner (loading indicator) -->
+              <div class="spinner"></div>
+
+              <!-- Current temperature display -->
+              <div class="d-flex flex-row">
+                <!-- Left side for temperature details -->
+                <div class="col-6 d-flex flex-column text-center mt-5 mb-4">
+                  <h6 class="display-4 mb-0 mt-2 font-weight-bold" id="currentTemp">
+                  </h6>
+                  <div class="d-flex flex-row mt-5">
+                    <div class="col-6 small" id="tempMin"></div>
+                    <div class="col-6 small" id="tempMax"></div>
+                  </div>
+                </div>
+
+                <!-- Right side for weather icon and description -->
+                <div class="col-6 d-flex flex-column text-center mt-5 mb-4">
+                  <div id="iconNow"></div>
+                  <span class="small mt-3" id="Description"></span>
+                </div>
+              </div>
+
+              <!-- Additional details like humidity and wind speed -->
+              <div class="d-flex flex-row">
+                <!-- Left side for humidity -->
+                <div class="col-6 d-flex flex-column text-center mt-5 mb-4">
+                  <div>
+                    <span class="ms-1" id="Humidity"></span>
+                  </div>
+                </div>
+
+                <!-- Right side for wind speed -->
+                <div class="col-6 d-flex flex-column text-center mt-5 mb-4">
+                  <span class="ms-1" id="windSpeed"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hourly forecast display -->
+      <div class="row d-flex justify-content-center">
+        <div class="d-flex col-md-8 col-lg-6 col-xl-5 text-center">
+          <!-- Loop through forecast time blocks -->
+          <div class="col-2 d-flex flex-column text-center">
+            <div id="3HourIcon"></div>
+            <span class="small mt-2" id="3HourTime"></span>
+            <span class="small" id="3HourTemp"></span>
+          </div>
+          <div class="col-2 d-flex flex-column text-center">
+            <div id="6HourIcon"></div>
+            <span class="small mt-2" id="6HourTime"></span>
+            <span class="small" id="6HourTemp"></span>
+          </div>
+          <div class="col-2 d-flex flex-column text-center">
+            <div id="9HourIcon"></div>
+            <span class="small mt-2" id="9HourTime"></span>
+            <span class="small" id="9HourTemp"></span>
+          </div>
+          <div class="col-2 d-flex flex-column text-center">
+            <div id="12HourIcon"></div>
+            <span class="small mt-2" id="12HourTime"></span>
+            <span class="small" id="12HourTemp"></span>
+          </div>
+          <div class="col-2 d-flex flex-column text-center">
+            <div id="15HourIcon"></div>
+            <span class="small mt-2" id="15HourTime"></span>
+            <span class="small" id="15HourTemp"></span>
+          </div>
+          <div class="col-2 d-flex flex-column text-center">
+            <div id="18HourIcon"></div>
+            <span class="small mt-2" id="18HourTime"></span>
+            <span class="small" id="18HourTemp"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- jQuery library -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JavaScript file -->
+    <script src="./script.js"></script>
+  </body>
+</html>
+<!-- 🦖 -->

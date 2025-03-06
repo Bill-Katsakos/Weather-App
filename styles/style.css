@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "PT Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "PT Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fff3e0;
+  background-size: 1000%;
+  animation: bg-animation 20s infinite alternate ease-in-out;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: 0% 0%;
+    background-size: 1000%;
+  }
+  25% {
+    background-position: 0% 75%;
+    background-size: 800%;
+  }
+  50% {
+    background-position: 75% 100%;
+    background-size: 400%;
+  }
+  75% {
+    background-position: 100% 25%;
+    background-size: 800%;
+  }
+  100% {
+    background-position: 25% 0%;
+    background-size: 1000%;
+  }
+}
+#input-city {
+  border-radius: 19px !important;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+#input-city:hover, #input-city:focus {
+  opacity: 1;
+}
+
+#search-button {
+  margin-top: 5px;
+  margin-left: 16px;
+}
+
+.transpBackground {
+  background-color: rgba(0, 255, 0, 0);
+}
+
+.mainContainer {
+  background-color: rgba(249, 244, 239, 0.2156862745);
+}
+
+.form-control:focus {
+  border-color: rgba(0, 0, 0, 0.0784313725);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-width: 1px;
+}
+
+.searchButton {
+  text-decoration: none;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0.0784313725);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  fill: none;
+}
+
+.spinner {
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  margin-top: 10em;
+  background-color: #000000;
+  border-radius: 100%;
+  animation: sk-scaleout 5s infinite ease-in-out;
+}
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(50);
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
