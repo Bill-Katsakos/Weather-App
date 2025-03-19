@@ -42,6 +42,10 @@ To run the app locally in **VS Code**, you will need the following extensions:
 4. Enable **Live Sass Compiler** to convert `.scss` files into CSS.
 5. Start **Live Server** to preview the app in your browser.
 
+## Deployment  
+You can test the live version of Weather-App here:  
+🔗 [Weather-App Live Demo](https://weather-app-katsakos.netlify.app/)
+
 ## Technologies Used
 
 - **HTML**
