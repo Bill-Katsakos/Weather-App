@@ -64,7 +64,8 @@ Contributions are welcome! If you’d like to contribute:
 
 ## License
 
-This project is open-source under the **Creative Commons Attribution License**. If you use or modify this project, you must provide proper credit to the original author.
+This project is open-source under the **MIT License**.  
+See the [LICENSE](./LICENSE) file for more details.
 
 ## Acknowledgments
 
